@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>Narrow Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="webjars/bootstrap/3.3.5/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet"/>
+
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation" class="active"><a href="#" th:href="@{/}">Home</a></li>
+                <li role="presentation"><a href="#">About</a></li>
+                <li role="presentation"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <h3 class="text-muted">Customer Service</h3>
+    </div>
+    <div layout:fragment="content">
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2016 agroho.com</p>
+    </footer>
+
+</div>
+
+
+
+<script src="webjars/jquery/1.11.1/jquery.min.js"
+        th:src="@{webjars/jquery/1.11.1/jquery.min.js}"></script>
+<script src="webjars/bootstrap/3.3.5/js/bootstrap.min.js"
+        th:src="@{webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+
+
+
+</body>
+</html>
