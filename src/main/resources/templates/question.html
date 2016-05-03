@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+        <html xmlns="http://www.w3.org/1999/xhtml"
+              xmlns:th="http://www.thymeleaf.org"
+              xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+              layout:decorator="layouts/main">
+
+        <head>
+
+            <title>Home</title>
+
+            <link rel="stylesheet" href="css/jumbotron-narrow.css"
+                  th:href="@{/css/jumbotron-narrow.css}" />
+
+
+
+            <!-- Make sure to close the angle bracket  -->
+        </head>
+
+
+<body>
+
+<div layout:fragment="content">
+
+    <div class="question-form">
+        <div class="col-lg-6">
+            <h1>Ask Question</h1>
+
+        </div>
+
+    </div>
+
+
+</div>
+</body>
+</html>
