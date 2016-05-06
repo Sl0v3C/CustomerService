@@ -21,11 +21,26 @@
 
 <div layout:fragment="content">
 
-    <div class="question-form">
+    <div class="row marketing">
         <div class="col-lg-6">
-            <h1>Ask Question</h1>
+            <form th:object="${question}" th:action="@{/question}" action="#" method="post">
+                <div class="form-group" >
+                    <label for="userQuestion">Name</label>
+                    <input type="text" class="form-control" id="userQuestion" th:field="*{questionDetails}" placeholder="Write Question"/>
+                </div>
+                <div class="form-group">
+                    <label for="userName">Name</label>
+                    <input type="text" class="form-control" id="userName" th:field="*{questionUserName}" placeholder="Your Name."/>
+                </div>
+                <div class="form-group">
+                    <label for="adminName">Admin Name</label>
+                    <input type="text" class="form-control" id="adminName" th:field="*{admin.adminName}" placeholder="Admin Name."/>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Question</button>
+            </form>
 
         </div>
+
 
     </div>
 

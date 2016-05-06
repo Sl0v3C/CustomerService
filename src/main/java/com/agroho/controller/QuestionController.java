@@ -5,6 +5,8 @@ import com.agroho.model.Question;
 import com.agroho.service.AskingQuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -19,28 +21,27 @@ public class QuestionController {
 
 
     @RequestMapping(value = "/question", method = RequestMethod.GET)
-    public String askQuestion(){
+    public String askQuestion( Model model){
 
-        Question question = new Question();
+        model.addAttribute("question",new Question());
 
-        question.setQuestionTitle("What is Islam");
-        question.setQuestionSubject("Islam");
-        question.setQuestionUserName("Prithu");
 
-        Admin admin = new Admin();
+        return "question";
+    }
 
-        admin.setAdminName("Amin");
-        admin.setAdminEmail("arez@gmail.com");
-        admin.setAdminPassword("pass");
-        admin.setAdminRole("Head");
 
-        question.setAdmin(admin);
+    @RequestMapping(value = "/question", method = RequestMethod.POST)
+    public String askQuestion(@ModelAttribute("question") Question question){
+
+
+        System.out.println("THIS IS POST CALL");
+        System.out.println("Get Data"+question.getQuestionDetails());
 
         String response = askingQuestionService.saveQuestion(question);
 
         System.out.println(response);
 
-        return "question";
+        return "redirect:/question/all";
     }
 
 
