@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/main">
+<head>
+    <title>Login Page </title>
+    />
+</head>
+<body>
+<div layout:fragment="content">
+
+    <div class="row marketing">
+        <div class="col-lg-6">
+<div th:if="${param.error}">
+    Invalid username and password.
+</div>
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
+<form th:action="@{/login}" method="post">
+    <div class="form-group" >
+        <label for="username">Name</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="username"/>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="password"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Question</button>
+
+</form>
+        </div>
+
+
+    </div>
+
+</div>
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      layout:decorator="layouts/main">
+
+<head>
+
+    <title>Home</title>
+
+    <link rel="stylesheet" href="css/jumbotron-narrow.css"
+          th:href="@{/css/jumbotron-narrow.css}" />
+
+
+
+    &lt;!&ndash; Make sure to close the angle bracket  &ndash;&gt;
+</head>
+
+
+<body>
+
+<div layout:fragment="content">
+
+ <div class="row marketing">
+        <div class="col-lg-6">
+    <div th:if="${param.error}">
+        Invalid username and password.
+    </div>
+    <div th:if="${param.logout}">
+        You have been logged out.
+    </div>
+
+
+            <form  th:action="@{/login}"  method="post">
+                <div class="form-group" >
+                    <label for="username">Name</label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="username"/>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="password"/>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Question</button>
+            </form>
+
+        </div>
+
+
+    </div>
+
+</div>
+</body>
+</html>-->

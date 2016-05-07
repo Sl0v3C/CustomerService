@@ -51,4 +51,9 @@ public class QuestionController {
         return "view_question";
     }
 
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String viewLogin(){
+
+        return "login";
+    }
 }
