@@ -23,8 +23,11 @@
 
     <div class="row marketing">
         <div class="col-lg-6">
+            <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Sign Out"/>
+            </form>
 
-            <h1>Hello All</h1>
 
         </div>
 
