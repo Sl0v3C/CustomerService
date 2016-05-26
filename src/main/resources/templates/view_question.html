@@ -8,6 +8,8 @@
 
     <title>Home</title>
 
+    <link rel="stylesheet" href="css/main.css"
+          th:href="@{/css/main.css}" />
     <link rel="stylesheet" href="css/jumbotron-narrow.css"
           th:href="@{/css/jumbotron-narrow.css}" />
 
@@ -21,14 +23,83 @@
 
 <div layout:fragment="content">
 
-    <div class="row marketing">
-        <div class="col-lg-6">
-            <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-            <form th:action="@{/logout}" method="post">
-                <input type="submit" value="Sign Out"/>
-            </form>
+    <div class="row">
 
+        <div class="col-md-12">
 
+            <table class="table table-hover table-bordered">
+
+                <thead>
+                <tr>
+                    <th colspan="7">Registered Courses</th>
+                </tr>
+                <tr>
+                    <th>Course ID</th>
+                    <th>Course Name</th>
+                    <th>Faculty</th>
+                    <th>Room</th>
+                    <th>Time</th>
+                    <th>Credit</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>CSE232</td>
+                    <td>Computer Programming</td>
+                    <td>Pankaj Sharma</td>
+                    <td>618</td>
+                    <td>5PM - 8PM</td>
+                    <td>3</td>
+                    <td>Pending</td>
+                </tr>
+                <tr>
+                    <td>CSE232</td>
+                    <td>Computer Programming</td>
+                    <td>Pankaj Sharma</td>
+                    <td>618</td>
+                    <td>5PM - 8PM</td>
+                    <td>3</td>
+                    <td>Pending</td>
+                </tr>
+                <tr>
+                    <td>CSE232</td>
+                    <td>Computer Programming</td>
+                    <td>Pankaj Sharma</td>
+                    <td>618</td>
+                    <td>5PM - 8PM</td>
+                    <td>3</td>
+                    <td>Pending</td>
+                </tr>
+                <tr>
+                    <td>CSE232</td>
+                    <td>Computer Programming</td>
+                    <td>Pankaj Sharma</td>
+                    <td>618</td>
+                    <td>5PM - 8PM</td>
+                    <td>3</td>
+                    <td>Pending</td>
+                </tr>
+                <tr>
+                    <td>CSE232</td>
+                    <td>Computer Programming</td>
+                    <td>Pankaj Sharma</td>
+                    <td>618</td>
+                    <td>5PM - 8PM</td>
+                    <td>3</td>
+                    <td>Pending</td>
+                </tr>
+                <tr>
+                    <td>CSE232</td>
+                    <td>Computer Programming</td>
+                    <td>Pankaj Sharma</td>
+                    <td>618</td>
+                    <td>5PM - 8PM</td>
+                    <td>3</td>
+                    <td>Pending</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
 
 

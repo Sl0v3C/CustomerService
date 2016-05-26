@@ -1,8 +1,7 @@
 package com.agroho.controller;
 
-import com.agroho.model.Admin;
 import com.agroho.model.Question;
-import com.agroho.service.AskingQuestionService;
+import com.agroho.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class QuestionController {
 
     @Autowired
-    AskingQuestionService askingQuestionService;
+    QuestionService questionService;
 
 
     @RequestMapping(value = "/question", method = RequestMethod.GET)
@@ -37,7 +36,7 @@ public class QuestionController {
         System.out.println("THIS IS POST CALL");
         System.out.println("Get Data"+question.getQuestionDetails());
 
-        String response = askingQuestionService.saveQuestion(question);
+        String response = questionService.saveQuestion(question);
 
         System.out.println(response);
 
@@ -51,9 +50,5 @@ public class QuestionController {
         return "view_question";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String viewLogin(){
 
-        return "login";
-    }
 }

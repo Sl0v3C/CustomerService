@@ -1,19 +1,20 @@
 package com.agroho.service;
 
 import com.agroho.model.Question;
-import com.agroho.repository.AskingQuestionRepositoriy;
-import com.agroho.repository.AskingQuestionRepositoryImpl;
+import com.agroho.repository.QuestionRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by rezaul on 5/6/16.
  */
 @Service
-public class AskingQuestionServiceImpl implements AskingQuestionService {
+public class QuestionServiceImpl implements QuestionService {
 
     @Autowired
-    AskingQuestionRepositoryImpl askingQuestionRepository;
+    QuestionRepositoryImpl askingQuestionRepository;
 
     @Override
     public String saveQuestion(Question question) {
@@ -21,5 +22,10 @@ public class AskingQuestionServiceImpl implements AskingQuestionService {
         String questionFeedback = askingQuestionRepository.saveQuestion(question);
 
         return questionFeedback;
+    }
+
+    @Override
+    public List<Question> getQuestionList() {
+        return null;
     }
 }

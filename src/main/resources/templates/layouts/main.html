@@ -27,6 +27,10 @@
                 <li role="presentation" class="active"><a href="#" th:href="@{/}">Home</a></li>
                 <li role="presentation"><a href="#">About</a></li>
                 <li role="presentation"><a href="#">Contact</a></li>
+                <li><p th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</p>
+                    <form th:action="@{/logout}" method="post">
+                        <input type="submit" value="Sign Out"/>
+                    </form></li>
             </ul>
         </nav>
         <h3 class="text-muted">Customer Service</h3>

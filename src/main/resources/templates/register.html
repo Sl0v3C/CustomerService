@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/main">
+
+<head>
+
+    <title>Home</title>
+
+    <link rel="stylesheet" href="css/jumbotron-narrow.css"
+          th:href="@{/css/jumbotron-narrow.css}" />
+
+</head>
+<body>
+
+<div layout:fragment="content">
+
+    <div class="row marketing">
+        <div class="col-lg-6">
+            <form th:object="${user}" th:action="@{/register}" action="#" method="post">
+                <div class="form-group" >
+                    <label for="adminUserName">Admin Name</label>
+                    <input type="text" class="form-control" id="adminUserName" th:field="*{userName}" placeholder="Write Question"/>
+                </div>
+                <div class="form-group">
+                    <label for="adminPassword">Admin Password</label>
+                    <input type="password" class="form-control" id="adminPassword" th:field="*{password}" placeholder="Admin Password"/>
+                </div>
+                <div class="form-group">
+                    <label for="adminEmail">Admin Email</label>
+                    <input type="text" class="form-control" id="adminEmail" th:field="*{email}" placeholder="Admin Email."/>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+</body>
+</html>

@@ -6,6 +6,7 @@ import javax.persistence.*;
 /**
  * Created by rezaul on 5/8/16.
  */
+
 @Entity
 @Table(name = "user_roles")
 public class UserRole {
