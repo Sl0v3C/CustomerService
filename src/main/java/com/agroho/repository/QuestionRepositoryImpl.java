@@ -21,25 +21,63 @@ public class QuestionRepositoryImpl implements CustomQuestionRepository{
     @PersistenceContext
     private EntityManager em;
 
+/*
 
     @Override
     public Question getQuestionByUserContact(String contact) {
 
-        String sqlfForQuestionByContact = "SELECT `question_id`, `question_answered`, `question_details`, `question_subject`, `question_title`, `question_user_contact`, `question_user_name`, `admin_id` FROM `question` WHERE `question_user_contact` = ?";
+        Long LongContact = Long.parseLong(contact);
+
+        Question q = em.find(Question.class,LongContact);
+
+        System.out.println("Data from nahid:"+q.getQuestionSubject());
+
+
+        return q;
+    }
+*/
+
+
+    @Override
+    public Question getQuestionByUserContact(String contact) {
+
+        String sqlfForQuestionByContact = "SELECT `question_id`, `question_answered`, `question_details`, `question_subject`, `question_title`, `question_user_contact`, `question_user_name`, `admin_id` FROM `question` WHERE `question_id` = ?";
         String test = "Select * from users";
-        Query query = em.createNativeQuery(test);
-        //query.setParameter(1,contact);
-        //em.fin
 
-        List<User> q = query.getResultList();
-        int u = q.size();
+        Long LongContact = Long.parseLong(contact);
 
-        System.out.println(u);
+        Query query = em.createNativeQuery(sqlfForQuestionByContact, Question.class);
+        query.setParameter(1,LongContact);
+        Question q = (Question) query.getSingleResult();
 
-        return null;
+        System.out.println("Data from nahid:"+q.getQuestionSubject());
+
+
+        return q;
     }
 
- /*   @Autowired
+ /*
+    String sqlfForQuestionByContact = "SELECT `question_id`, `question_answered`, `question_details`, `question_subject`, `question_title`, `question_user_contact`, `question_user_name`, `admin_id` FROM `question` WHERE `question_id` = ?";
+        String test = "Select * from users";
+
+        Query query = em.createNativeQuery(sqlfForQuestionByContact);
+        query.setParameter(1,LongContact);*//*
+
+
+
+
+    //  Question question = (Question) query.getSingleResult();
+    // Question q = (Question) query.getSingleResult();
+
+
+    //em.fin
+
+        //List<User> q = query.getResultList();
+       // int u = q.size();
+
+        //System.out.println(u);
+
+  @Autowired
     QuestionRepositoriy questionRepositoriy;
 
     public String saveQuestion(Question question){

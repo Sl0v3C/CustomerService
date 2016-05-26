@@ -1,6 +1,7 @@
 package com.agroho.service;
 
 import com.agroho.model.Question;
+import com.agroho.repository.CustomQuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.agroho.repository.QuestionRepository;
@@ -15,6 +16,9 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Autowired
     QuestionRepository questionRepository;
+
+    @Autowired
+    CustomQuestionRepository customQuestionRepository;
 
     @Override
     public String saveQuestion(Question question) {
@@ -32,6 +36,6 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public Question getQuestionByUserContact(String contact) {
-        return questionRepository.getQuestionByUserContact(contact);
+        return customQuestionRepository.getQuestionByUserContact(contact);
     }
 }

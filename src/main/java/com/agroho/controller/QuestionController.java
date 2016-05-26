@@ -32,6 +32,9 @@ public class QuestionController {
     @RequestMapping(value = "/question/{contact}", method = RequestMethod.GET)
     public String SearchByContact(@PathVariable(value = "contact") String contact){
 
+        System.out.println("Path Variable: "+contact);
+
+
         Question question = questionService.getQuestionByUserContact(contact);
 
         System.out.println("Question Title: "+question.getQuestionSubject());
