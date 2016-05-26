@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface QuestionRepositoriy extends JpaRepository<Question,Long>{
+public interface QuestionRepository extends JpaRepository<Question,Long>, CustomQuestionRepository{
+
+
 
 }

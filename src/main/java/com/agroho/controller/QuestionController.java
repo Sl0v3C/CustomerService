@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -28,6 +29,16 @@ public class QuestionController {
         return "question";
     }
 
+    @RequestMapping(value = "/question/{contact}", method = RequestMethod.GET)
+    public String SearchByContact(@PathVariable(value = "contact") String contact){
+
+        Question question = questionService.getQuestionByUserContact(contact);
+
+        System.out.println("Question Title: "+question.getQuestionSubject());
+
+        return "home";
+    }
+
 
     @RequestMapping(value = "/question", method = RequestMethod.POST)
     public String askQuestion(@ModelAttribute("question") Question question){
@@ -40,7 +51,7 @@ public class QuestionController {
 
         System.out.println(response);
 
-        return "redirect:/question/all";
+        return "question";
     }
 
 

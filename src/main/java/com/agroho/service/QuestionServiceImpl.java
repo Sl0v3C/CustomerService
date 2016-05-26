@@ -1,9 +1,9 @@
 package com.agroho.service;
 
 import com.agroho.model.Question;
-import com.agroho.repository.QuestionRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.agroho.repository.QuestionRepository;
 
 import java.util.List;
 
@@ -14,18 +14,24 @@ import java.util.List;
 public class QuestionServiceImpl implements QuestionService {
 
     @Autowired
-    QuestionRepositoryImpl askingQuestionRepository;
+    QuestionRepository questionRepository;
 
     @Override
     public String saveQuestion(Question question) {
 
-        String questionFeedback = askingQuestionRepository.saveQuestion(question);
+        Question questionFeedback = questionRepository.saveAndFlush(question);
+        String feedback = questionFeedback.getQuestionTitle();
 
-        return questionFeedback;
+        return feedback;
     }
 
     @Override
     public List<Question> getQuestionList() {
         return null;
+    }
+
+    @Override
+    public Question getQuestionByUserContact(String contact) {
+        return questionRepository.getQuestionByUserContact(contact);
     }
 }
