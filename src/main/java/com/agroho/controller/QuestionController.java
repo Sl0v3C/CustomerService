@@ -25,26 +25,13 @@ public class QuestionController {
 
         model.addAttribute("question",new Question());
 
-
         return "question";
     }
 
-    @RequestMapping(value = "/question/{contact}", method = RequestMethod.GET)
-    public String SearchByContact(@PathVariable(value = "contact") String contact){
-
-        System.out.println("Path Variable: "+contact);
-
-
-        Question question = questionService.getQuestionByUserContact(contact);
-
-        System.out.println("Question Title: "+question.getQuestionSubject());
-
-        return "home";
-    }
 
 
     @RequestMapping(value = "/question", method = RequestMethod.POST)
-    public String askQuestion(@ModelAttribute("question") Question question){
+    public String askQuestion(@ModelAttribute("question") Question question, Model model){
 
 
         System.out.println("THIS IS POST CALL");
@@ -52,17 +39,28 @@ public class QuestionController {
 
         String response = questionService.saveQuestion(question);
 
+        model.addAttribute("res", response);
+
         System.out.println(response);
 
-        return "question";
+        return "response";
     }
 
 
-    @RequestMapping(value = "/question/all", method = RequestMethod.GET)
-    public String viewQuestion(){
-
-        return "view_question";
-    }
 
 
 }
+
+
+ /*    @RequestMapping(value = "/question/{contact}", method = RequestMethod.GET)
+        public String SearchByContact(@PathVariable(value = "contact") String contact){
+
+            System.out.println("Path Variable: "+contact);
+
+
+            Question question = questionService.getQuestionByUserContact(contact);
+
+            System.out.println("Question Title: "+question.getQuestionSubject());
+
+            return "home";
+        }*/

@@ -56,47 +56,5 @@ public class QuestionRepositoryImpl implements CustomQuestionRepository{
         return q;
     }
 
- /*
-    String sqlfForQuestionByContact = "SELECT `question_id`, `question_answered`, `question_details`, `question_subject`, `question_title`, `question_user_contact`, `question_user_name`, `admin_id` FROM `question` WHERE `question_id` = ?";
-        String test = "Select * from users";
-
-        Query query = em.createNativeQuery(sqlfForQuestionByContact);
-        query.setParameter(1,LongContact);*//*
-
-
-
-
-    //  Question question = (Question) query.getSingleResult();
-    // Question q = (Question) query.getSingleResult();
-
-
-    //em.fin
-
-        //List<User> q = query.getResultList();
-       // int u = q.size();
-
-        //System.out.println(u);
-
-  @Autowired
-    QuestionRepositoriy questionRepositoriy;
-
-    public String saveQuestion(Question question){
-
-       Question question1 =  questionRepositoriy.saveAndFlush(question);
-
-        if (question1.getQuestionId() != null){
-            return question1.getQuestionId().toString();
-        } else {
-            return "Failed";
-        }
-    }
-
-    public List<Question> getQuestionList(){
-
-        List<Question> questionList  = questionRepositoriy.findAll();
-
-        return questionList;
-    }*/
-
 
 }

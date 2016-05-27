@@ -24,15 +24,11 @@ public class QuestionServiceImpl implements QuestionService {
     public String saveQuestion(Question question) {
 
         Question questionFeedback = questionRepository.saveAndFlush(question);
-        String feedback = questionFeedback.getQuestionTitle();
+        String feedback = questionFeedback.getQuestionUserName();
 
         return feedback;
     }
 
-    @Override
-    public List<Question> getQuestionList() {
-        return null;
-    }
 
     @Override
     public Question getQuestionByUserContact(String contact) {
