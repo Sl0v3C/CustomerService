@@ -22,24 +22,32 @@
 <div layout:fragment="content">
     <div class="row marketing">
         <div class="col-lg-6">
-            <form th:object="${question}" th:action="@{/question}" action="#" method="post">
+            <form th:object="${question}" th:action="@{/admin/question}" action="#" method="post">
+                <div class="form-group" >
+                    <input class="form-control" id="userQuestionId" th:field="*{questionId}" type="hidden" />
+                </div>
                 <div class="form-group" >
                     <label for="userQuestion">Name</label>
-                    <input type="text" class="form-control" id="userQuestion" th:field="*{questionUserName}" placeholder="Your Name"/>
+                    <input type="text" class="form-control" id="userQuestion" th:field="*{questionUserName}" placeholder="Your Name" th:disabled="disabled" />
                 </div>
                 <div class="form-group" >
                     <label for="Email">Email</label>
-                    <input type="text" class="form-control" id="Email" th:field="*{questionUserContact}" placeholder="Your Email"/>
+                    <input type="text" class="form-control" id="Email" th:field="*{questionUserContact}" placeholder="Your Email" th:disabled="disabled"/>
                 </div>
                 <div class="form-group">
                     <label for="subject">Subject</label>
-                    <input type="text" class="form-control" id="subject" th:field="*{questionSubject}" placeholder="Subject of your question"/>
+                    <input type="text" class="form-control" id="subject" th:field="*{questionSubject}" placeholder="Subject of your question" th:disabled="disabled"/>
                 </div>
                 <div class="form-group">
                     <label for="questionDetails">Question</label>
-                    <textarea rows="5" class="form-control" id="questionDetails" th:field="*{questionDetails}" placeholder="Question Details"/>
+                    <textarea rows="5" class="form-control" id="questionDetails" th:field="*{questionDetails}" placeholder="Question Details" th:disabled="disabled"/>
                 </div>
-                <button type="submit" class="btn btn-primary">Send Question</button>
+
+                <div class="form-group">
+                    <label for="questionAnswer">Answer</label>
+                    <textarea rows="5" class="form-control" id="questionAnswer" th:field="*{questionAnswer}" placeholder="Answer Details"  />
+                </div>
+                <button type="submit" class="btn btn-primary">Answer</button>
             </form>
         </div>
     </div>

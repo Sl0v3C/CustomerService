@@ -39,53 +39,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>CSE232</td>
-                        <td>Computer Programming</td>
-                        <td>Pankaj Sharma</td>
 
-                        <td><button type="submit" class="btn btn-primary">Answer</button></td>
+         <tr th:each="q: ${questions}">
+
+                        <td th:text="${q.questionId}">id</td>
+                        <td th:text="${q.questionSubject}">subject</td>
+                        <td th:text="${q.questionDetails}">Details</td>
+                        <td><a class="btn btn-large btn-primary" th:href="@{'/admin/question/'+${q.questionId}}">Answer</a></td>
                     </tr>
-                    <tr>
-                        <td>CSE232</td>
-                        <td>Computer Programming</td>
-                        <td>Pankaj Sharma</td>
 
-                        <td><button type="submit" class="btn btn-primary">Answer</button></td>
-
-                    </tr>
-                    <tr>
-                        <td>CSE232</td>
-                        <td>Computer Programming</td>
-                        <td>Pankaj Sharma</td>
-
-                        <td><button type="submit" class="btn btn-primary">Answer</button></td>
-
-                    </tr>
-                    <tr>
-                        <td>CSE232</td>
-                        <td>Computer Programming</td>
-                        <td>Pankaj Sharma</td>
-
-                        <td><button type="submit" class="btn btn-primary">Answer</button></td>
-
-                    </tr>
-                    <tr>
-                        <td>CSE232</td>
-                        <td>Computer Programming</td>
-                        <td>Pankaj Sharma</td>
-
-                        <td><button type="submit" class="btn btn-primary">Answer</button></td>
-
-                    </tr>
-                    <tr>
-                        <td>CSE232</td>
-                        <td>Computer Programming</td>
-                        <td>Pankaj Sharma</td>
-
-                        <td><button type="submit" class="btn btn-primary">Answer</button></td>
-
-                    </tr>
                     </tbody>
                 </table>
 

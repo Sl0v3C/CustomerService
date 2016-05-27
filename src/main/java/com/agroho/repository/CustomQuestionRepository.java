@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CustomQuestionRepository {
 
-    public Question getQuestionByUserContact(String contact);
+    public Question getQuestionByUserId(Long id);
 }

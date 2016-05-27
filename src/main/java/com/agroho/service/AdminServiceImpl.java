@@ -1,6 +1,7 @@
 package com.agroho.service;
 
 import com.agroho.model.Question;
+import com.agroho.repository.CustomQuestionRepository;
 import com.agroho.repository.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,9 @@ public class AdminServiceImpl implements AdminService{
     @Autowired
     QuestionRepository questionRepository;
 
+    @Autowired
+    CustomQuestionRepository customQuestionRepository;
+
     @Override
     public List<Question> getQuestionList() {
 
@@ -25,13 +29,14 @@ public class AdminServiceImpl implements AdminService{
     }
 
     @Override
-    public Question getQuestionById(int id) {
-        return null;
+    public Question getQuestionById(Long id) {
+
+        return customQuestionRepository.getQuestionByUserId(id);
     }
 
     @Override
     public Question submitAnswer(Question question) {
-        return null;
+        return questionRepository.saveAndFlush(question);
     }
 
     @Override

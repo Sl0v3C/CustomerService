@@ -17,6 +17,7 @@ public class Question {
 
     private String questionTitle;
 
+    @Lob
     private String questionDetails;
 
     private String questionSubject;
@@ -24,6 +25,9 @@ public class Question {
     private String questionUserName;
 
     private String questionUserContact;
+
+    @Lob
+    private String questionAnswer;
 
     private int questionAnswered;
 
@@ -93,5 +97,13 @@ public class Question {
 
     public void setAdmin(Admin admin) {
         this.admin = admin;
+    }
+
+    public String getQuestionAnswer() {
+        return questionAnswer;
+    }
+
+    public void setQuestionAnswer(String questionAnswer) {
+        this.questionAnswer = questionAnswer;
     }
 }

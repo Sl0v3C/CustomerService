@@ -13,7 +13,7 @@ public interface AdminService {
 
     public List<Question> getQuestionList();
 
-    public Question getQuestionById(int id);
+    public Question getQuestionById(Long id);
 
     public Question submitAnswer(Question question);
 

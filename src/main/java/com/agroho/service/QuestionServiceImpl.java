@@ -30,8 +30,4 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
 
-    @Override
-    public Question getQuestionByUserContact(String contact) {
-        return customQuestionRepository.getQuestionByUserContact(contact);
-    }
 }

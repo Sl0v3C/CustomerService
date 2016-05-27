@@ -13,5 +13,4 @@ public interface QuestionService {
 
     public String saveQuestion(Question question);
 
-    public Question getQuestionByUserContact(String contact);
 }

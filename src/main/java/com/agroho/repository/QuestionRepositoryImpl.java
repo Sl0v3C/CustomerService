@@ -39,15 +39,15 @@ public class QuestionRepositoryImpl implements CustomQuestionRepository{
 
 
     @Override
-    public Question getQuestionByUserContact(String contact) {
+    public Question getQuestionByUserId(Long LongId) {
 
-        String sqlfForQuestionByContact = "SELECT `question_id`, `question_answered`, `question_details`, `question_subject`, `question_title`, `question_user_contact`, `question_user_name`, `admin_id` FROM `question` WHERE `question_id` = ?";
+        String sqlfForQuestionByContact = "SELECT `question_id`, `question_answered`,`question_answer`, `question_details`, `question_subject`, `question_title`, `question_user_contact`, `question_user_name`, `admin_id` FROM `question` WHERE `question_id` = ?";
         String test = "Select * from users";
 
-        Long LongContact = Long.parseLong(contact);
+
 
         Query query = em.createNativeQuery(sqlfForQuestionByContact, Question.class);
-        query.setParameter(1,LongContact);
+        query.setParameter(1,LongId);
         Question q = (Question) query.getSingleResult();
 
         System.out.println("Data from nahid:"+q.getQuestionSubject());
