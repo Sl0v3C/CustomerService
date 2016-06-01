@@ -59,6 +59,9 @@ public class AdminController {
 
     }
 
+
+
+
     /*    @RequestMapping(value = "/question/{contact}", method = RequestMethod.GET)
         public String SearchByContact(@PathVariable(value = "contact") String contact){
 
@@ -86,16 +89,32 @@ public class AdminController {
         return "admin-answer-question";
     }
 
-    @RequestMapping(value = "/answer", method = RequestMethod.GET)
-    public String viewAnswered(){
 
-        return "admin-answer";
+    @RequestMapping(value = "/answered", method = RequestMethod.GET)
+    public String AnsweredQuestion(Model model){
+        List<Question> questionList = adminService.getAnsweredQuestionList();
+
+        for (int i = 0; i < questionList.size(); i++) {
+            String Subject = questionList.get(i).getQuestionSubject();
+            System.out.println(Subject);
+        }
+
+        model.addAttribute("questions", questionList);
+
+        return "admin-answered";
     }
 
-    @RequestMapping(value = "/answer/{id}", method = RequestMethod.GET)
-    public String viewSingleAnswered(){
 
-        return null;
+    @RequestMapping(value = "/answered/{id}", method = RequestMethod.GET)
+    public String viewSingleAnswered(@PathVariable(value = "id") String id , Model model){
+
+        Long idlong = Long.parseLong(id);
+
+        Question question = adminService.getQuestionById(idlong);
+
+        model.addAttribute("question", question);
+
+        return "admin-answered-question";
     }
 
 }

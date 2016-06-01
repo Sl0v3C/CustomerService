@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/main">
+
+<head>
+
+    <title>Home</title>
+
+    <link rel="stylesheet" href="css/jumbotron-narrow.css"
+          th:href="@{/css/jumbotron-narrow.css}" />
+
+
+
+    <!-- Make sure to close the angle bracket  -->
+</head>
+
+
+<body>
+
+<div layout:fragment="content">
+    <div class="row marketing">
+        <div class="col-lg-6">
+            <form th:object="${question}" th:action="@{/admin/question}" action="#" method="post">
+                <div class="form-group" >
+                    <input class="form-control" id="userQuestionId" th:field="*{questionId}" type="hidden" />
+                </div>
+                <div class="form-group" >
+                    <label for="userQuestion">Name</label>
+                    <input type="text" class="form-control" id="userQuestion" th:field="*{questionUserName}" placeholder="Your Name" th:disabled="disabled" />
+                </div>
+                <div class="form-group" >
+                    <label for="Email">Email</label>
+                    <input type="text" class="form-control" id="Email" th:field="*{questionUserContact}" placeholder="Your Email" th:disabled="disabled"/>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" class="form-control" id="subject" th:field="*{questionSubject}" placeholder="Subject of your question" th:disabled="disabled"/>
+                </div>
+                <div class="form-group">
+                    <label for="questionDetails">Question</label>
+                    <textarea rows="5" class="form-control" id="questionDetails" th:field="*{questionDetails}" placeholder="Question Details" th:disabled="disabled"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="questionAnswer">Answer</label>
+                    <textarea rows="5" class="form-control" id="questionAnswer" th:field="*{questionAnswer}" placeholder="Answer Details" th:disabled="disabled" />
+                </div>
+                <a class="btn btn-large btn-primary" th:href="@{'/admin/answered/'}">Back</a>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
