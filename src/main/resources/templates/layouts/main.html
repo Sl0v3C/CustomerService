@@ -24,16 +24,16 @@
     <div class="header clearfix">
         <nav>
             <ul class="nav nav-pills pull-right">
-                <li role="presentation" class="active"><a href="#" th:href="@{/}">Home</a></li>
-                <li role="presentation"><a href="#">About</a></li>
-                <li role="presentation"><a href="#">Contact</a></li>
+                <li role="presentation"><a href="/" th:href="@{/}">Home</a></li>
+                <li role="presentation"><a href="/question">Ask Queston</a></li>
+                <li role="presentation"><a href="/admin">Admin</a></li>
                 <li><p th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</p>
                     <form th:action="@{/logout}" method="post">
                         <input type="submit" value="Sign Out"/>
                     </form></li>
             </ul>
         </nav>
-        <h3 class="text-muted">Customer Service</h3>
+        <h3 class="text-muted"><a href="#" th:href="@{/}">Customer Service</a></h3>
     </div>
     <div layout:fragment="content">
     </div>

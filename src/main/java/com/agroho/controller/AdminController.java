@@ -23,6 +23,12 @@ public class AdminController {
     @Autowired
     AdminService adminService;
 
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public String redirectToHome(){
+        return "admin-question";
+    }
+
+
     @RequestMapping(value = "/question", method = RequestMethod.GET)
     public String viewQuestion(Model model){
 

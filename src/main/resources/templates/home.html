@@ -17,7 +17,7 @@
 </head>
 
 
-<body>
+<body id="home">
 
 <div layout:fragment="content">
 
@@ -29,27 +29,38 @@
 
     <div class="row marketing">
         <div class="col-lg-6">
-            <h4>Subheading</h4>
+            <h4>Ask Any Question</h4>
+<!--
             <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+-->
 
-            <h4>Subheading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-            <h4>Subheading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
+            <h4>Get Answer to Your Inbox</h4>
+         <!--   <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+-->
+            <h4>Expert Answer</h4>
+           <!-- <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+       --> </div>
 
         <div class="col-lg-6">
-            <h4>Subheading</h4>
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-            <h4>Subheading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-            <h4>Subheading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
+            <h4>Faster Response</h4>
+           <!-- <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+-->
+            <h4>Lighting Speed</h4>
+          <!--  <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+-->
+            <h4>Latest Technology</h4>
+           <!-- <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+  -->      </div>
     </div>
 </div>
+
+
+<script>
+    $(function () {
+        $("#home a:contains('Home')").parent().addClass('active');
+        $("#admin a:contains('Admin')").parent().addClass('active');
+        $("#question a:contains('Ask Queston')").parent().addClass('active');
+    });
+</script>
 </body>
 </html>

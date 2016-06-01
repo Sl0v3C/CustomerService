@@ -17,7 +17,7 @@
 </head>
 
 
-<body>
+<body id="admin">
 
 <div layout:fragment="content">
     <div class="row marketing">
@@ -54,5 +54,12 @@
         </div>
     </div>
 </div>
+<script>
+    $(function () {
+        $("#home a:contains('Home')").parent().addClass('active');
+        $("#admin a:contains('Admin')").parent().addClass('active');
+        $("#question a:contains('Ask Queston')").parent().addClass('active');
+    });
+</script>
 </body>
 </html>
